@@ -1,0 +1,55 @@
+body {
+    height: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: yellow;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+
+}
+
+.main-button {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    border: 1px solid orange;
+    padding: 5px;
+
+}
+
+.main-button:hover {
+    background-color: white;
+}
+
+.nav-button {
+    align-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.cards {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card {
+    box-shadow: 0.5px 0.5px grey;
+    width: 300px;
+}
+
+.card:hover {
+    box-shadow: 2px 2px grey;
+}
