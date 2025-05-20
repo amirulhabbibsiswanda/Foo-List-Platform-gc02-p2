@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+#navbar-button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+#product-name {
+  font-family: 'Courier New', Courier, monospace;
+
+}
+
+#product-description {
+  font-family: serif;
+}
