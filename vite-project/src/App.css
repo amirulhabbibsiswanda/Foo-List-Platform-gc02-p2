@@ -12,3 +12,21 @@
 #product-description {
   font-family: serif;
 }
+
+#per-card {
+  box-shadow: 1px 1px grey;
+  min-height: 280px;
+}
+
+#per-card img {
+  height: 280px;
+  width: 400px;
+  object-fit: fill;
+}
+
+#per-card:hover {
+  box-shadow: 2px 2px #212121;
+  cursor: pointer;
+}
+
+/* #side-button {} */
