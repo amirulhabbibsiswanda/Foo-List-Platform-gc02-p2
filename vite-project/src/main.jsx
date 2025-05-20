@@ -7,6 +7,7 @@ import Login from './login.jsx'
 import Navbar from './components/Navbar.jsx'
 import TableCuisines from './TableCuisines.jsx'
 import CreateAndEditProduct from './components/CreateAndEditProduct.jsx'
+import AddStaff from './components/AddStaff.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,6 +17,8 @@ createRoot(document.getElementById('root')).render(
     <Login />
     <TableCuisines />
     <CreateAndEditProduct />
+
+    <AddStaff />
 
   </StrictMode>,
 )
