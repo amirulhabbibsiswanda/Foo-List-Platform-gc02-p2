@@ -25,8 +25,7 @@
 }
 
 #per-card:hover {
-  box-shadow: 2px 2px #212121;
-  cursor: pointer;
+  box-shadow: 4px 4px #888888;
 }
 
 /* #side-button {} */
