@@ -2,15 +2,19 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
-
+import CardCuisines from './components/CardCuisines'
+import Navbar from './components/Navbar'
+// import Navbar from './components/Navbar'
 
 // import "tailwindcss";
 
 function App() {
   return (
     <>
+      <Navbar />
+      <CardCuisines />
 
-      <div className="grid place-items-center">
+      {/* <div className="grid place-items-center">
 
         <div className="mx-5 flex justify-evenly flex-wrap" id="cards-container">
           <div id="per-card" className="w-100 mt-5">
@@ -75,7 +79,7 @@ function App() {
           <p>FOOTER</p>
         </div>
 
-      </div>
+      </div> */}
       {/* </div> */}
 
     </>
