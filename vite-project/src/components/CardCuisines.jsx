@@ -10,7 +10,7 @@ export default function CardCuisines() {
     async function getData() {
         try {
             const fetchedData = await axios.get("https://h8-phase2-gc.vercel.app/apis/pub/restaurant-app/cuisines")
-            // console.log(fetchedData.data.data.query[0], "<<<<<<"); // ambil sampel satu data
+            console.log(fetchedData.data.data.query, "<<<<<<"); // ambil sampel satu data
             // console.log(cuisines, "=======");
             setCuisines(fetchedData.data.data.query)
         } catch (error) {
@@ -19,11 +19,11 @@ export default function CardCuisines() {
         }
     }
     // console.log("ini jalan");
-    // getData()
+    getData()
 
-    useEffect(() => {
-        getData();
-    }, [])
+    // useEffect(() => {
+    //     getData();
+    // }, [])
 
     const handleOnDelete = (id) => {
         setCuisines(cuisines.filter((el) => el.id !== id))
