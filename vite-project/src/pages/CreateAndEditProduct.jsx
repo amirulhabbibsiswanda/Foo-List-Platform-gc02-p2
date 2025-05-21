@@ -33,6 +33,9 @@ export default function CreateAndEditProduct() {
                 "imgUrl": imageUrl,
                 "stock": 120,
                 "categoryId": Number(category)
+            },
+            {
+                headers: { Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzQ3ODQzOTM5LCJleHAiOjE3NDc4NDc1Mzl9.SfRyrNnP0VK0im4yOwx_irzHay6qmfWwDRGk9kOfuJs" }
             }
         )
         navigate("/")
