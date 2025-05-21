@@ -6,6 +6,8 @@ import './index.css'
 import { BrowserRouter, Routes, Route } from "react-router";
 import App from './App';
 import LoggedInHomePage from './pages/LoggedInHomePage';
+import TableCuisines from './pages/TableCuisines';
+import CreateAndEditProduct from './pages/CreateAndEditProduct';
 // import App from './App.jsx'
 // import ProductDetail from './components/ProductDetail.jsx'
 // import Login from './login.jsx'
@@ -22,9 +24,11 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/cuisines/add" element={<CreateAndEditProduct />} />
         <Route path="/loggedin" element={<LoggedInHomePage />} />
       </Routes>
     </BrowserRouter>
+    <TableCuisines />
 
     {/* <Navbar />
     <App />

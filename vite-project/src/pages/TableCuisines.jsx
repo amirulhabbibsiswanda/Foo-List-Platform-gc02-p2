@@ -12,12 +12,25 @@ export default function TableCuisines() {
                         <th>Description</th>
                         <th>Price</th>
                         <th>Category</th>
+                        <th>Action</th>
                     </tr>
                     <tr>
                         <td>Spring Rolls</td>
                         <td>ini deskripsi</td>
                         <td>harganya</td>
                         <td>nama kategori</td>
+                        <td>
+                            <button className="text-red-500 hover:cursor-pointer" type="button">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Spring Rolls</td>
+                        <td>ini deskripsi</td>
+                        <td>harganya</td>
+                        <td>nama kategori</td>
+                        <td>
+                            <button className="text-red-500 hover:cursor-pointer" type="button">Delete</button>
+                        </td>
                     </tr>
                 </table>
             </div>

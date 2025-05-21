@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
+import { NavLink } from 'react-router'
 import './App.css'
 import CardCuisines from './components/CardCuisines'
 import Navbar from './components/Navbar'
@@ -12,6 +13,9 @@ function App() {
   return (
     <>
       <Navbar />
+      <NavLink to="/cuisines/add" end>
+        Add Cuisine
+      </NavLink>
       <CardCuisines />
 
       {/* <div className="grid place-items-center">

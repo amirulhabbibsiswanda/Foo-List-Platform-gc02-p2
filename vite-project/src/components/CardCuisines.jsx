@@ -13,25 +13,28 @@ export default function CardCuisines() {
             // console.log(fetchedData.data.data.query[0], "<<<<<<"); // ambil sampel satu data
             // console.log(cuisines, "=======");
             setCuisines(fetchedData.data.data.query)
-
         } catch (error) {
             console.log(error.name, "error name");
             console.log(error, "ini errorr");
-
         }
     }
+    // console.log("ini jalan");
+    // getData()
 
     useEffect(() => {
         getData();
     }, [])
 
+    const handleOnDelete = (id) => {
+        setCuisines(cuisines.filter((el) => el.id !== id))
+    }
     return (
         <>
             {/* {JSON.stringify(cuisines)} */}
             <div className="mx-5 flex justify-evenly flex-wrap">
                 {cuisines.map((cuisine) => {
                     return (
-                        <div className="w-100 h-135 max-h-full mt-5 border border-black flex flex-col items-center justify-between text-center" id="cards-container">
+                        <div className="w-100 max-h-full mt-5 border border-black flex flex-col items-center justify-between text-center" id="cards-container">
                             <img className="w-85 max-w-full h-90 mt-0" src={cuisine.imgUrl} alt="" />
                             <div id="product-description" className=" py-4">
                                 <p id="product-name" className="text-2xl font-bold">{cuisine.name}</p>
@@ -39,7 +42,7 @@ export default function CardCuisines() {
                             </div>
                             <div className="">
                                 <button className="text-blue-500 hover:cursor-pointer underline mx-4">See Detail</button>
-                                <button className="text-red-500 hover:cursor-pointer underline mx-4">Delete</button>
+                                <button onClick={() => { handleOnDelete(cuisine.id) }} className="text-red-500 hover:cursor-pointer underline mx-4">Delete</button>
 
                             </div>
                         </div>
