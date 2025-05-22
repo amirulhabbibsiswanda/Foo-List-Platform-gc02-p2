@@ -14,6 +14,7 @@ function App() {
     <>
       <Navbar />
       <p><NavLink to={"/cuisines"}>ke tabel cuisines</NavLink></p>
+      <p><NavLink to={"/categories"}>ke tabel categories</NavLink></p>
       <CardCuisines />
       {/* <NavLink to="/cuisines/add" end>
         Add Cuisine

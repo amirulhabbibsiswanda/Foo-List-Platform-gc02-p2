@@ -17,7 +17,7 @@ export default function TableCuisines() {
 
     async function deleteCuisine(id) {
         try {
-            console.log(id, "ini id");
+            // console.log(id, "ini id");
 
             await axiosInstance.delete(`/apis/restaurant-app/cuisines/${id}`, {
                 headers: {
@@ -36,30 +36,30 @@ export default function TableCuisines() {
     }, [])
     return (
         < div className="relative overflow-x-auto" >
-            {/* {JSON.stringify(cuisines)} */}
+
             <p className="text-center text-2xl font-semibold">Products List</p>
             <div className="flex justify-center">
 
                 <table className="text-center max-w-full w-200 text-sm rtl:text-right text-black border border-black">
                     <thead>
-                        <tr className="border border-black">
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Category</th>
-                            <th>Action</th>
+                        <tr className="">
+                            <th className="border border-black">Name</th>
+                            <th className="border border-black">Description</th>
+                            <th className="border border-black">Price</th>
+                            <th className="border border-black">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {cuisines.map((el) => {
-                            return (<tr key={el.id}>
-                                <td>{el.name}</td>
-                                <td>{el.description}</td>
-                                <td>{el.price}</td>
-                                <td>
-                                    <button onClick={() => { deleteCuisine(el.id) }} className="text-red-500 hover:cursor-pointer" type="button">Delete</button>
-                                </td>
-                            </tr>
+                            return (
+                                <tr key={el.id}>
+                                    <td className="border border-black">{el.name}</td>
+                                    <td className="border border-black">{el.description}</td>
+                                    <td className="border border-black">{el.price}</td>
+                                    <td className="border border-black">
+                                        <button onClick={() => { deleteCuisine(el.id) }} className="text-red-500 hover:cursor-pointer" type="button">Delete</button>
+                                    </td>
+                                </tr>
                             )
                         })}
                     </tbody>

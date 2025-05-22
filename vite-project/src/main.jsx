@@ -8,6 +8,7 @@ import App from './App';
 import Login from './pages/login';
 // import LoggedInHomePage from './pages/LoggedInHomePage';
 import TableCuisines from './pages/TableCuisines';
+import TableCategories from "./pages/TableCategories";
 // import CreateAndEditProduct from './pages/CreateAndEditProduct';
 // import Login from './pages/login';
 // import App from './App.jsx'
@@ -28,6 +29,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path='/login' element={<Login />} />
         <Route path='/cuisines' element={<TableCuisines />} />
+        <Route path='/categories' element={<TableCategories />} />
         {/* <Route path="/cuisines/add" element={<CreateAndEditProduct />} />
         <Route path="/loggedin" element={<LoggedInHomePage />} /> */}
       </Routes>

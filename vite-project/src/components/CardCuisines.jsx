@@ -31,7 +31,6 @@ export default function CardCuisines() {
     }
     return (
         <>
-            {JSON.stringify(cuisines)}
             <div className="mx-5 flex justify-evenly flex-wrap">
                 {/* {JSON.stringify(cuisines)} */}
                 {cuisines.map((cuisine) => {
