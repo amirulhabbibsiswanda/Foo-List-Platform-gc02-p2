@@ -1,5 +1,6 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+// import axios from 'axios';
+import axiosInstance from '../library/https';
+import { useState, useEffect } from 'react';
 // import { useState } from 'react';
 
 
@@ -9,21 +10,21 @@ export default function CardCuisines() {
 
     async function getData() {
         try {
-            const fetchedData = await axios.get("https://h8-phase2-gc.vercel.app/apis/pub/restaurant-app/cuisines")
-            console.log(fetchedData.data.data.query, "<<<<<<"); // ambil sampel satu data
+            const fetchedData = await axiosInstance.get("apis/pub/restaurant-app/cuisines")
+            // console.log(fetchedData.data.data, "<<<<<<"); // ambil sampel satu data
             // console.log(cuisines, "=======");
             setCuisines(fetchedData.data.data.query)
         } catch (error) {
             console.log(error.name, "error name");
-            console.log(error, "ini errorr");
+            console.log(error, "ini errornya");
         }
     }
     // console.log("ini jalan");
-    getData()
+    // getData()
 
-    // useEffect(() => {
-    //     getData();
-    // }, [])
+    useEffect(() => {
+        getData();
+    }, [])
 
     const handleOnDelete = (id) => {
         setCuisines(cuisines.filter((el) => el.id !== id))
@@ -32,10 +33,11 @@ export default function CardCuisines() {
         <>
             {/* {JSON.stringify(cuisines)} */}
             <div className="mx-5 flex justify-evenly flex-wrap">
+                {/* {JSON.stringify(cuisines)} */}
                 {cuisines.map((cuisine) => {
                     return (
-                        <div className="w-100 max-h-full mt-5 border border-black flex flex-col items-center justify-between text-center" id="cards-container">
-                            <img className="w-85 max-w-full h-90 mt-0" src={cuisine.imgUrl} alt="" />
+                        <div key={cuisine.id} className="w-100 max-h-full mt-5 border border-black flex flex-col items-center justify-between text-center" id="cards-container">
+                            <img className="w-85 max-w-full h-90 mt-0" src={cuisine.imgUrl} />
                             <div id="product-description" className=" py-4">
                                 <p id="product-name" className="text-2xl font-bold">{cuisine.name}</p>
                                 <p id="product-description" className="text-xl font-normal">{cuisine.description}</p>

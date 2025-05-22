@@ -1,3 +1,4 @@
+import { NavLink } from "react-router"
 
 export default function Navbar() {
     return (
@@ -8,10 +9,17 @@ export default function Navbar() {
                 <a className="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800  rounded-lg  px-5 py-3 text-center me-2 mb-2 font-bold" id="navbar-button" href="#">MENU</a>
                 <a className="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800  rounded-lg  px-5 py-3 text-center me-2 mb-2 font-bold" id="navbar-button" href="#">OUR SERVICES</a>
             </div>
-            <div>
-                <button className="m-1 p-3 bg-slate-200 rounded-2xl font-semibold hover:cursor-pointer hover:bg-blue-400" id="side-button">LOGIN</button>
-                <button className="mx-2 p-3 bg-slate-200 rounded-2xl font-semibold hover:cursor-pointer  hover:bg-blue-400" id="side-button">REGISTER</button>
-            </div>
+
+            {
+                localStorage.getItem("access_token") ?
+                    <div><p className="text-blue-700 px-2 rounded-lg bg-slate-100 text-xl">HALO SELAMAT DATA DI RUMAH MAKAN ONLINE PALSU</p></div>
+                    :
+                    <div>
+                        <button className="m-1 p-3 bg-slate-200 rounded-2xl 
+                                        font-semibold hover:cursor-pointer hover:bg-blue-400"
+                            id="side-button"><NavLink to={"/login"}>LOGIN</NavLink></button>
+                    </div>
+            }
         </div>
 
     )
