@@ -19,12 +19,12 @@ export default function TableCuisines() {
         try {
             console.log(id, "ini id");
 
-            // const deletedCuisine = await axiosInstance.delete(`/apis/restaurant-app/cuisines/${id}`, {
-            //     headers: {
-            //         Authorization: `Bearer ${localStorage.getItem("access_token")}`
-            //     }
-            // })
-            // FetchMovies()
+            await axiosInstance.delete(`/apis/restaurant-app/cuisines/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("access_token")}`
+                }
+            })
+            FetchMovies()
         } catch (error) {
             console.log(error, 'ini error');
             console.log(error.name, 'ini error name');
@@ -57,7 +57,7 @@ export default function TableCuisines() {
                                 <td>{el.description}</td>
                                 <td>{el.price}</td>
                                 <td>
-                                    <button onClick={deleteCuisine(el.id)} className="text-red-500 hover:cursor-pointer" type="button">Delete</button>
+                                    <button onClick={() => { deleteCuisine(el.id) }} className="text-red-500 hover:cursor-pointer" type="button">Delete</button>
                                 </td>
                             </tr>
                             )
