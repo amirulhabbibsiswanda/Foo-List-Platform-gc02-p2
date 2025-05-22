@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-// import { NavLink } from 'react-router'
+import { NavLink } from 'react-router'
 import './App.css'
 import CardCuisines from './components/CardCuisines'
 import Navbar from './components/Navbar'
@@ -13,6 +13,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <p><NavLink to={"/cuisines"}>ke tabel cuisines</NavLink></p>
       <CardCuisines />
       {/* <NavLink to="/cuisines/add" end>
         Add Cuisine

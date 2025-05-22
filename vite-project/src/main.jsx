@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import App from './App';
 import Login from './pages/login';
 // import LoggedInHomePage from './pages/LoggedInHomePage';
-// import TableCuisines from './pages/TableCuisines';
+import TableCuisines from './pages/TableCuisines';
 // import CreateAndEditProduct from './pages/CreateAndEditProduct';
 // import Login from './pages/login';
 // import App from './App.jsx'
@@ -27,6 +27,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/cuisines' element={<TableCuisines />} />
         {/* <Route path="/cuisines/add" element={<CreateAndEditProduct />} />
         <Route path="/loggedin" element={<LoggedInHomePage />} /> */}
       </Routes>

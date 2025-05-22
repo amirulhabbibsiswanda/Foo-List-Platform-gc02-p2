@@ -10,7 +10,7 @@ export default function CardCuisines() {
 
     async function getData() {
         try {
-            const fetchedData = await axiosInstance.get("apis/pub/restaurant-app/cuisines")
+            const fetchedData = await axiosInstance.get("/apis/pub/restaurant-app/cuisines")
             // console.log(fetchedData.data.data, "<<<<<<"); // ambil sampel satu data
             // console.log(cuisines, "=======");
             setCuisines(fetchedData.data.data.query)
@@ -31,7 +31,7 @@ export default function CardCuisines() {
     }
     return (
         <>
-            {/* {JSON.stringify(cuisines)} */}
+            {JSON.stringify(cuisines)}
             <div className="mx-5 flex justify-evenly flex-wrap">
                 {/* {JSON.stringify(cuisines)} */}
                 {cuisines.map((cuisine) => {

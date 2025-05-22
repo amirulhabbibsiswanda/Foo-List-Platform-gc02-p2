@@ -20,7 +20,7 @@ export default function Login() {
             )
             console.log(user.data, "ini user.data.data");
             localStorage.setItem("access_token", user.data.data.access_token)
-            navigate("/")
+            navigate("/cuisines")
 
         } catch (error) {
             console.log(error.name, "ini erorname");
