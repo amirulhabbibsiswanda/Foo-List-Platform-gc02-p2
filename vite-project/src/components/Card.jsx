@@ -1,17 +1,23 @@
-// import axiosInstance from "../library/https";
-// import { useNavigate } from "react-router";
+
+import { useNavigate } from 'react-router';
 
 export default function Card({ cuisine }) {
+    const navigate = useNavigate()
+
+    const intoCuisineDetail = (id) => {
+        navigate(`/apis/pub/restaurant-app/cuisines/${id}`)
+    }
 
     return (
-        <div className="col mb-5">
-            <div className="card" style={{ width: '18rem' }}>
-                <img src={cuisine.imgUrl} className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">{cuisine.name}</h5>
+        <div className="">
+            <div className="w-100 max-h-full mt-5 border border-black flex flex-col items-center justify-between text-center">
+                <img src={cuisine.imgUrl} className="w-85 max-w-full h-90 mt-0" alt="" />
+                <div className="py-4">
+                    <h5 className="text-xxl font-bold">{cuisine.name}</h5>
                 </div>
-                <button className="btn btn-sm btn-primary">Detail</button>
+                <button onClick={() => { intoCuisineDetail(cuisine.id) }} className="text-blue-500 hover:cursor-pointer underline mx-4">Detail</button>
             </div>
         </div>
+
     )
 }
