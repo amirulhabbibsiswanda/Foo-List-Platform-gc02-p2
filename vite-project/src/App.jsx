@@ -13,9 +13,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <p><NavLink to={"/cuisines"}>ke tabel cuisines</NavLink></p>
-      <p><NavLink to={"/cuisines/add"}>add or edit category</NavLink></p>
-      <p><NavLink to={"/categories"}>ke tabel categories</NavLink></p>
+      {/* <SearchFeature /> */}
       <CardCuisines />
       {/* <NavLink to="/cuisines/add" end>
         Add Cuisine

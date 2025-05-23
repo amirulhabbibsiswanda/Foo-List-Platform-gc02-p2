@@ -12,7 +12,11 @@ export default function Navbar() {
 
             {
                 localStorage.getItem("access_token") ?
-                    <div><p className="text-blue-700 px-2 rounded-lg bg-slate-100 text-xl">HALO SELAMAT DATA DI RUMAH MAKAN ONLINE PALSU</p></div>
+                    <div>
+                        <button className="m-1 p-3 bg-slate-200 rounded-2xl 
+                                        font-semibold hover:cursor-pointer hover:bg-blue-400"
+                            id="side-button">LOGOUT</button>
+                    </div>
                     :
                     <div>
                         <button className="m-1 p-3 bg-slate-200 rounded-2xl 

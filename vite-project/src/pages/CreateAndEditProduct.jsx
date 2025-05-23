@@ -69,8 +69,6 @@ export default function CreateAndEditProduct() {
         }
     }
 
-    let params = useParams()
-    let cuisineId = params.id
 
     async function populateDataInEdit(cuisineId) {
         try {
@@ -93,6 +91,9 @@ export default function CreateAndEditProduct() {
             console.log(error.name, "ini error name");
         }
     }
+
+    let params = useParams()
+    let cuisineId = params.id
     useEffect(() => {
         fetchCategories()
         if (cuisineId) {

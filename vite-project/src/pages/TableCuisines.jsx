@@ -42,6 +42,10 @@ export default function TableCuisines() {
         < div className="relative overflow-x-auto" >
             <button className="bg-green-400 p-3"><NavLink to={"/cuisines/add"}>Add New Cuisine</NavLink></button>
 
+            <p><NavLink to={"/cuisines"}>ke tabel cuisines</NavLink></p>
+            <p><NavLink to={"/cuisines/add"}>add or edit category</NavLink></p>
+            <p><NavLink to={"/categories"}>ke tabel categories</NavLink></p>
+
             <p className="text-center text-2xl font-semibold">Cuisine List</p>
             <div className="flex justify-center">
 
