@@ -1,20 +1,42 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import { NavLink } from 'react-router'
+// import { NavLink } from 'react-router'
 import './App.css'
-import CardCuisines from './components/CardCuisines'
 import Navbar from './components/Navbar'
+import { useEffect, useState } from 'react'
+import axiosInstance from './library/https'
+import Card from './components/Card'
 // import Navbar from './components/Navbar'
 
 // import "tailwindcss";
 
 function App() {
+  const [cuisines, setCuisines] = useState([])
+  async function fetchCuisines() {
+    try {
+      const { data } = await axiosInstance.get("/apis/pub/restaurant-app/cuisines")
+      setCuisines(data.data.query)
+    } catch (error) {
+      console.log(error);
+
+    }
+  }
+
+  useEffect(() => {
+    fetchCuisines()
+  }, [])
   return (
     <>
       <Navbar />
       {/* <SearchFeature /> */}
-      <CardCuisines />
+      <div>
+        {
+          cuisines.map((cuisine) => {
+            return (<Card cuisine={cuisine} key={cuisine.id} />)
+          })
+        }
+      </div>
       {/* <NavLink to="/cuisines/add" end>
         Add Cuisine
       </NavLink> */}
