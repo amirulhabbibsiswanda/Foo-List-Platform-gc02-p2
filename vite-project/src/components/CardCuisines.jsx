@@ -3,7 +3,6 @@ import axiosInstance from '../library/https';
 import { useState, useEffect } from 'react';
 // import { useState } from 'react';
 
-
 export default function CardCuisines() {
 
     const [cuisines, setCuisines] = useState([])
@@ -46,6 +45,7 @@ export default function CardCuisines() {
                                 <button onClick={() => { handleOnDelete(cuisine.id) }} className="text-red-500 hover:cursor-pointer underline mx-4">Delete</button>
 
                             </div>
+
                         </div>
                     )
                 })}

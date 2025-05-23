@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../library/https";
 
+
 export default function TableCategories() {
 
     const [categories, setCategories] = useState([])
@@ -10,7 +11,7 @@ export default function TableCategories() {
             const categories = await axiosInstance.get("/apis/restaurant-app/categories",
                 {
                     headers: {
-                        Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzQ3OTMwMzUzLCJleHAiOjE3NDc5MzM5NTN9.rd6p3E_HpAoSnlC88ad3fsDT-1rfHTUPo5Bn1Wy2D5Y"
+                        Authorization: `Bearer ${localStorage.getItem("access_token")}`
                     }
                 }
             )
@@ -20,7 +21,6 @@ export default function TableCategories() {
         } catch (error) {
             console.log(error, "ini error");
             console.log(error.name, "ini error name");
-
         }
     }
 
@@ -54,6 +54,7 @@ export default function TableCategories() {
                     </tbody>
                 </table>
             </div>
+
         </div>
 
     )

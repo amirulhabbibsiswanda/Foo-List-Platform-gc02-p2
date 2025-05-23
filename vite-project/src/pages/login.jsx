@@ -18,7 +18,7 @@ export default function Login() {
                     password: password
                 }
             )
-            console.log(user.data, "ini user.data.data");
+            // console.log(user.data, "ini user.data.data");
             localStorage.setItem("access_token", user.data.data.access_token)
             navigate("/cuisines")
 
