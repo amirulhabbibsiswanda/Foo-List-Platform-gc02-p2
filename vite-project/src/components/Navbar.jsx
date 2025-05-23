@@ -1,6 +1,11 @@
-import { NavLink } from "react-router"
+import { useNavigate, NavLink } from "react-router"
 
 export default function Navbar() {
+    const navigate = useNavigate()
+    function logout() {
+        localStorage.clear()
+        navigate("/login")
+    }
     return (
         <div id="navbar" className="flex justify-between items-center bg-yellow-300 h-35 min-w-screen">
             <img className="h-35 rounded-b-lg" src="https://i.pinimg.com/736x/d8/bd/63/d8bd63b0bff920df88eeec64e634c48a.jpg" alt="logo" />
@@ -15,7 +20,7 @@ export default function Navbar() {
                     <div>
                         <button className="m-1 p-3 bg-slate-200 rounded-2xl 
                                         font-semibold hover:cursor-pointer hover:bg-blue-400"
-                            id="side-button">LOGOUT</button>
+                            onClick={logout} id="side-button">LOGOUT</button>
                     </div>
                     :
                     <div>

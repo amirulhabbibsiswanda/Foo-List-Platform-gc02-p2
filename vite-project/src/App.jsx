@@ -13,7 +13,6 @@ function App() {
       setCuisines(data.data.query)
     } catch (error) {
       console.log(error);
-
     }
   }
 

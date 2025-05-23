@@ -1,7 +1,7 @@
 // import axios from 'axios';
 import axiosInstance from '../library/https';
 import { useState, useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 // import { useState } from 'react';
 
 export default function CardCuisines() {
