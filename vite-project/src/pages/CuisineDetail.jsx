@@ -24,16 +24,17 @@ export default function CuisineDetail() {
     }, [cuisineId])
 
     return (
+        <div className='flex justify-center min-h-screen border'>
 
-        <div className="flex flex-col content-center justify-center w-200 border border-black" style={{}}>
-            <img className="w-100" src={cuisine.imgUrl} alt="" />
-            <div className="text-center">
-                <p>{cuisine.name}</p>
-                <p>{cuisine.description}</p>
-                <p>Harga: {cuisine.price}</p>
-                {/* <p>{cuisine.Category.name}</p>
-                <p>{cuisine.User.username}</p> */}
+            <div className="flex flex-col items-center justify-center w-64 rounded-lg overflow-hidden shadow-sm">
+                <img className="w-full h-40 object-cover shadow-lg shadow-amber-300" src={cuisine.imgUrl} alt={cuisine.name} />
+                <div className="text-center p-4 shadow-lg shadow-amber-100">
+                    <p className="text-lg font-semibold">{cuisine.name}</p>
+                    <p className="text-sm text-gray-600">{cuisine.description}</p>
+                    <p className="mt-2 font-medium">Harga: {cuisine.price}</p>
+                </div>
             </div>
         </div>
+
     );
 }

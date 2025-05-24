@@ -39,44 +39,59 @@ export default function TableCuisines() {
         fetchCuisines()
     }, [])
     return (
-        < div className="relative overflow-x-auto" >
-            <button className="bg-green-400 p-3"><NavLink to={"/cuisines/add"}>Add New Cuisine</NavLink></button>
+        <div className="relative overflow-x-auto p-6">
+            <div className="flex items-center justify-between mb-4">
+                <NavLink to="/cuisines/add">
+                    <button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow">
+                        Add New Cuisine
+                    </button>
+                </NavLink>
+                <NavLink to="/categories" className="text-blue-600 hover:underline">
+                    Category List
+                </NavLink>
+            </div>
 
-            <p><NavLink to={"/cuisines"}>ke tabel cuisines</NavLink></p>
-            <p><NavLink to={"/cuisines/add"}>add or edit category</NavLink></p>
-            <p><NavLink to={"/categories"}>ke tabel categories</NavLink></p>
+            <p className="text-center text-2xl font-bold mb-6">Cuisine List</p>
 
-            <p className="text-center text-2xl font-semibold">Cuisine List</p>
             <div className="flex justify-center">
-
-                <table className="text-center max-w-full w-200 text-sm rtl:text-right text-black border border-black">
-                    <thead>
-                        <tr className="">
-                            <th className="border border-black">Name</th>
-                            <th className="border border-black">Description</th>
-                            <th className="border border-black">Price</th>
-                            <th className="border border-black">Action</th>
+                <table className="table-auto w-full max-w-6xl text-sm text-center text-black border border-black shadow-md">
+                    <thead className="bg-gray-100">
+                        <tr>
+                            <th className="border border-black px-4 py-2">Name</th>
+                            <th className="border border-black px-4 py-2">Description</th>
+                            <th className="border border-black px-4 py-2">Price</th>
+                            <th className="border border-black px-4 py-2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {cuisines.map((el) => {
-                            return (
-                                <tr key={el.id}>
-                                    <td className="border border-black">{el.name}</td>
-                                    <td className="border border-black">{el.description}</td>
-                                    <td className="border border-black">{el.price}</td>
-                                    <td className="border border-black">
-                                        <button onClick={() => { navigate(`/cuisines/edit/${el.id}`) }} className="text-blue-500 hover:cursor-pointer" type="button">Edit</button>
-                                        <button onClick={() => { deleteCuisine(el.id) }} className="text-red-500 hover:cursor-pointer bg-amber-100" type="button">Delete</button>
-                                    </td>
-                                </tr>
-                            )
-                        })}
+                        {cuisines.map((el) => (
+                            <tr key={el.id} className="hover:bg-gray-50">
+                                <td className="border border-black px-3 py-2">{el.name}</td>
+                                <td className="border border-black px-3 py-2 text-left">{el.description}</td>
+                                <td className="border border-black px-3 py-2">{el.price}</td>
+                                <td className="border border-black px-3 py-2 space-x-2">
+                                    <button
+                                        onClick={() => navigate(`/cuisines/edit/${el.id}`)}
+                                        className="text-blue-600 hover:underline"
+                                        type="button"
+                                    >
+                                        Edit
+                                    </button>
+                                    <button
+                                        onClick={() => deleteCuisine(el.id)}
+                                        className="text-red-600 hover:underline"
+                                        type="button"
+                                    >
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
-
                 </table>
             </div>
-        </div >
+        </div>
+
 
     )
 
