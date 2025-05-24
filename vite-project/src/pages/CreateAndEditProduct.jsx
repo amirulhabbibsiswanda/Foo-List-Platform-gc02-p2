@@ -42,7 +42,7 @@ export default function CreateAndEditProduct() {
                     headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` }
                 }
             )
-            navigate("/")
+            navigate("/cuisines")
 
         } catch (error) {
             console.log(error, " ini error");
@@ -112,44 +112,79 @@ export default function CreateAndEditProduct() {
     }
 
     return (
-        <div className="flex flex-col justify-center">
-            <p className="text-center text-xl">Cuisine Input Form</p>
+        <div className="flex flex-col justify-center p-6">
+            <p className="text-center text-2xl font-bold text-yellow-700 mb-6">Cuisine Input Form</p>
 
-            <form onSubmit={handleSubmit} className="w-250 max-w-full mx-auto border border-black">
-                <div className="mb-5">
-                    <label className="block mb-2 text-sm font-medium text-black ">Cuisine Name</label>
-                    <input onChange={(e) => { setCuisineName(e.target.value) }} value={cuisineName} type="text" name="cuisineName" id="cuisineName" className="shadow-xs bg-yellow-100 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light" placeholder="" />
-                </div>
-                <div className="mb-5">
-                    <label className=" block mb-2 text-sm font-medium text-black">Price</label>
-                    <input onChange={(e) => { setPrice(e.target.value) }} value={price} name="price" type="number" id="price" className="shadow-xs  border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-400 bg-yellow-100 text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light" />
-                </div>
-                <div className="mb-5">
-                    <label className="block mb-2 text-sm font-medium text-black">Description</label>
-                    <input onChange={(e) => { setDescription(e.target.value) }} value={description} type="text" id="description" className="shadow-xs bg-yellow-100 border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light" />
-                </div>
-                <div className="mb-5">
-                    <label className="block mb-2 text-sm font-medium text-black">Image Url</label>
-                    <input onChange={(e) => { setImgUrl(e.target.value) }} value={imgUrl} type="text" id="imgUrl" className="shadow-xs bg-yellow-100 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light" />
+            <form onSubmit={handleSubmit} className="w-full max-w-xl mx-auto border border-yellow-400 rounded-lg p-6 shadow-md bg-white space-y-5">
+                <div>
+                    <label className="block mb-2 text-sm font-medium text-gray-700">Cuisine Name</label>
+                    <input
+                        onChange={(e) => setCuisineName(e.target.value)}
+                        value={cuisineName}
+                        type="text"
+                        name="cuisineName"
+                        id="cuisineName"
+                        className="bg-yellow-100 border border-yellow-300 text-black text-sm rounded-md focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 shadow-sm"
+                        placeholder=""
+                    />
                 </div>
 
-                <div className="space-x-5">
-                    <label htmlFor="">Category</label>
-                    <select className="border border-slate-400 bg-slate-400" value={categoryId} onChange={(e) => { setCategoryId(e.target.value) }} name="category" id="">
-                        <option value="" selected disabled>Select Category</option>
-                        {categories.map((el) => {
-                            return (
-                                <option key={el.id} value={el.id}>{el.name}</option>
-                            )
-                        })}
+                <div>
+                    <label className="block mb-2 text-sm font-medium text-gray-700">Price</label>
+                    <input
+                        onChange={(e) => setPrice(e.target.value)}
+                        value={price}
+                        name="price"
+                        type="number"
+                        id="price"
+                        className="bg-yellow-100 border border-yellow-300 text-black text-sm rounded-md focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 shadow-sm"
+                    />
+                </div>
+
+                <div>
+                    <label className="block mb-2 text-sm font-medium text-gray-700">Description</label>
+                    <input
+                        onChange={(e) => setDescription(e.target.value)}
+                        value={description}
+                        type="text"
+                        id="description"
+                        className="bg-yellow-100 border border-yellow-300 text-black text-sm rounded-md focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 shadow-sm"
+                    />
+                </div>
+
+                <div>
+                    <label className="block mb-2 text-sm font-medium text-gray-700">Image Url</label>
+                    <input
+                        onChange={(e) => setImgUrl(e.target.value)}
+                        value={imgUrl}
+                        type="text"
+                        id="imgUrl"
+                        className="bg-yellow-100 border border-yellow-300 text-black text-sm rounded-md focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 shadow-sm"
+                    />
+                </div>
+
+                <div>
+                    <label className="block mb-2 text-sm font-medium text-gray-700">Category</label>
+                    <select
+                        className="border border-yellow-300 bg-yellow-50 text-sm rounded-md p-2.5 w-full text-black focus:ring-yellow-500 focus:border-yellow-500"
+                        value={categoryId}
+                        onChange={(e) => setCategoryId(e.target.value)}
+                        name="category"
+                        id=""
+                    >
+                        <option value="" disabled>Select Category</option>
+                        {categories.map((el) => (
+                            <option key={el.id} value={el.id}>{el.name}</option>
+                        ))}
                     </select>
                 </div>
 
-                <Button />
+                <div className="pt-4">
+                    <Button />
+                </div>
             </form>
-
-
         </div>
+
 
     )
 }

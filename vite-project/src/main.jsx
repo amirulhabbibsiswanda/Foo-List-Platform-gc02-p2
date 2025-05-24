@@ -13,6 +13,7 @@ import CreateAndEditProduct from './pages/CreateAndEditProduct';
 import MainLayout from './Layouts/MainLayout';
 import CuisineDetail from './pages/CuisineDetail';
 import AuthLayout from './Layouts/AuthLayout';
+import AddUser from './pages/AddUser';
 // import CreateAndEditProduct from './pages/CreateAndEditProduct';
 // import Login from './pages/login';
 // import App from './App.jsx'
@@ -42,6 +43,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='/cuisines/add' element={<CreateAndEditProduct />} />
           <Route path='/cuisines/edit/:id' element={<CreateAndEditProduct />} />
           <Route path='/categories' element={<TableCategories />} />
+          <Route path='/users/add' element={<AddUser />} />
         </Route>
         {/* <Route path="/cuisines/add" element={<CreateAndEditProduct />} />
         <Route path="/loggedin" element={<LoggedInHomePage />} /> */}
