@@ -1,0 +1,29 @@
+#navbar-button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+#product-name {
+  font-family: 'Courier New', Courier, monospace;
+
+}
+
+#product-description {
+  font-family: serif;
+}
+
+#per-card {
+  box-shadow: 1px 1px grey;
+  min-height: 280px;
+}
+
+#per-card img {
+  height: 280px;
+  width: 400px;
+  object-fit: fill;
+}
+
+#per-card:hover {
+  box-shadow: 4px 4px #888888;
+}
+
+/* #side-button {} */
