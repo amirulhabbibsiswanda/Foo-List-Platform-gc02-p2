@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import { useEffect, useState } from 'react'
 import axiosInstance from './library/https'
 import Card from './components/Card'
+import Swal from 'sweetalert2'
 
 function App() {
   // console.log("masuk app");
@@ -26,7 +27,13 @@ function App() {
       // console.log(data.data, "ini categories");
       setCategories(data.data)
     } catch (error) {
-      console.log(error, "ini error di cateogries");
+      // console.log(error, "ini error di cateogries");
+      Swal.fire({
+        title: 'Error!',
+        text: error.message,
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
 
     }
   }
@@ -74,7 +81,12 @@ function App() {
       // console.log(data.data.query, "cui");
 
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        title: 'Error!',
+        text: error.message,
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
     }
   }
 

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../library/https";
 import { NavLink } from "react-router";
-import CreateAndEditProduct from "./CreateAndEditProduct";
+// import CreateAndEditProduct from "./CreateAndEditProduct";
 import { useNavigate } from "react-router";
+import Swal from "sweetalert2";
 
 export default function TableCuisines() {
     const [cuisines, setCuisines] = useState([])
@@ -20,8 +21,14 @@ export default function TableCuisines() {
             setCuisines(cuisines.data.data)
 
         } catch (error) {
-            console.log(error, "error");
-            console.log(error.name, "error name");
+            // console.log(error, "error");
+            // console.log(error.name, "error name");
+            Swal.fire({
+                title: 'Error!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })
         }
     }
 
@@ -36,8 +43,14 @@ export default function TableCuisines() {
             })
             fetchCuisines()
         } catch (error) {
-            console.log(error, 'ini error');
-            console.log(error.name, 'ini error name');
+            // console.log(error, 'ini error');
+            // console.log(error.name, 'ini error name');
+            Swal.fire({
+                title: 'Error!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })
         }
     }
 
@@ -98,6 +111,11 @@ export default function TableCuisines() {
                                         type="button"
                                     >
                                         Delete
+                                    </button>
+                                    <button onClick={() => navigate(`/image/upload/${el.id}`)}
+                                        className="text-green-400 hover:underline font-medium"
+                                        type="button">
+                                        Change Image
                                     </button>
                                 </td>
                             </tr>

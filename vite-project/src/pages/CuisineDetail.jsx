@@ -1,6 +1,7 @@
 import { useParams } from 'react-router';
 import axiosInstance from '../library/https';
 import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 export default function CuisineDetail() {
     const [cuisine, setCuisine] = useState({})
@@ -15,7 +16,13 @@ export default function CuisineDetail() {
             // { id: 272, name: "Es Kopi Gula Malaka Pangalengan", description: "Kopi dengan susu dan gula jawa", price: 48600, imgUrl: "https://res.cloudinary.com/dpjqm8kkk/image/upload/v1723556109/hacktiv8/restaurant/es-kopi-gula-malaka-pangalengan-6hoitjxuqb9.jpg", categoryId: 19, authorId: 3, createdAt: "2024-08-13T13:35:09.960Z", updatedAt: "2024-08-13T13:35:09.960Z", Category: {…}, … }
             setCuisine(data.data)
         } catch (error) {
-            console.log(error, "error");
+            // console.log(error, "error");
+            Swal.fire({
+                title: 'Error!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })
         }
     }
 

@@ -5,7 +5,7 @@ import './index.css'
 
 import { BrowserRouter, Routes, Route } from "react-router";
 import App from './App';
-import Login from './pages/login';
+import Login from './pages/Login';
 // import LoggedInHomePage from './pages/LoggedInHomePage';
 import TableCuisines from './pages/TableCuisines';
 import TableCategories from "./pages/TableCategories";
@@ -14,6 +14,7 @@ import MainLayout from './Layouts/MainLayout';
 import CuisineDetail from './pages/CuisineDetail';
 import AuthLayout from './Layouts/AuthLayout';
 import AddUser from './pages/AddUser';
+import UploadImage from './pages/UploadImage';
 // import CreateAndEditProduct from './pages/CreateAndEditProduct';
 // import Login from './pages/login';
 // import App from './App.jsx'
@@ -32,7 +33,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path='/apis/pub/restaurant-app/cuisines/:id' element={<CuisineDetail />} />
+        <Route path='/cuisine/detail/:id' element={<CuisineDetail />} />
 
         <Route element={<AuthLayout />}>
           <Route path='/login' element={<Login />} />
@@ -44,6 +45,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='/cuisines/edit/:id' element={<CreateAndEditProduct />} />
           <Route path='/categories' element={<TableCategories />} />
           <Route path='/users/add' element={<AddUser />} />
+          <Route path='/image/upload/:id' element={<UploadImage />} />
         </Route>
         {/* <Route path="/cuisines/add" element={<CreateAndEditProduct />} />
         <Route path="/loggedin" element={<LoggedInHomePage />} /> */}

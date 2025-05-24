@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import { useNavigate } from "react-router";
 import axiosInstance from "../library/https";
 import { useParams } from 'react-router';
+import Swal from "sweetalert2";
 
 export default function CreateAndEditProduct() {
     const navigate = useNavigate()
@@ -26,8 +27,14 @@ export default function CreateAndEditProduct() {
             setCategories(categories.data.data)
 
         } catch (error) {
-            console.log(error, "ini error");
-            console.log(error.name, "ini error name");
+            // console.log(error, "ini error");
+            // console.log(error.name, "ini error name");
+            Swal.fire({
+                title: 'Error!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })
 
         }
     }
@@ -45,8 +52,14 @@ export default function CreateAndEditProduct() {
             navigate("/cuisines")
 
         } catch (error) {
-            console.log(error, " ini error");
-            console.log(error.name, " ini error name");
+            // console.log(error, " ini error");
+            // console.log(error.name, " ini error name");
+            Swal.fire({
+                title: 'Error!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })
         }
     }
 
@@ -64,8 +77,14 @@ export default function CreateAndEditProduct() {
             )
             navigate("/cuisines")
         } catch (error) {
-            console.log(error, " ini error");
-            console.log(error.name, " ini error name");
+            // console.log(error, " ini error");
+            // console.log(error.name, " ini error name");
+            Swal.fire({
+                title: 'Error!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })
         }
     }
 
@@ -87,8 +106,14 @@ export default function CreateAndEditProduct() {
             setCategoryId(data.data.categoryId)
 
         } catch (error) {
-            console.log(error, "ini error");
-            console.log(error.name, "ini error name");
+            // console.log(error, "ini error");
+            // console.log(error.name, "ini error name");
+            Swal.fire({
+                title: 'Error!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })
         }
     }
 

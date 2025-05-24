@@ -5,7 +5,7 @@ export default function Card({ cuisine }) {
     const navigate = useNavigate()
 
     const intoCuisineDetail = (id) => {
-        navigate(`/apis/pub/restaurant-app/cuisines/${id}`)
+        navigate(`/cuisine/detail/${id}`)
     }
 
     return (
