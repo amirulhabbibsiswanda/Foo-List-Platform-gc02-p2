@@ -179,7 +179,7 @@ function App() {
             onClick={() => setSort("asc")}
             className="bg-amber-200 rounded-lg px-3 py-1 hover:bg-amber-300"
           >
-            Latest Cuisine
+            Oldest Cuisine
           </button>
         </div>
 
@@ -194,7 +194,7 @@ function App() {
         </div>
 
         <button onClick={clearFilter} className='hover:cursor-pointer bg-red-200 rounded px-4 py-2 self-start'>
-          Clear Filter</button>
+          Clear All Filter</button>
       </div>
 
 

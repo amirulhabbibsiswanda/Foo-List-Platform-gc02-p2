@@ -43,7 +43,7 @@ export default function Login() {
                 <input name="email" onChange={(e) => { setEmail(e.target.value) }} className="border" type="text" />
 
                 <label htmlFor="password">Password</label>
-                <input name="password" onChange={(e) => { setPassword(e.target.value) }} className="border" type="text" />
+                <input name="password" onChange={(e) => { setPassword(e.target.value) }} className="border" type="password" />
 
                 <input type="submit" value="LOGIN" className="bg-green-300 mt-10 w-50 mx-auto hover:cursor-pointer" />
             </form>

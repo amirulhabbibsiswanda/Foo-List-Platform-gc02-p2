@@ -65,9 +65,7 @@ export default function TableCuisines() {
                         Add New Cuisine
                     </button>
                 </NavLink>
-                <NavLink to="/categories" className="text-yellow-700 hover:underline font-semibold">
-                    Category List
-                </NavLink>
+
             </div>
             <div className="flex items-center justify-between mb-4">
                 <NavLink to="/users/add">
