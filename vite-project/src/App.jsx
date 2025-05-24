@@ -90,10 +90,6 @@ function App() {
     }
   }
 
-  // useEffect(() => {
-  //   fetchCategories()
-  // }, [])
-
   useEffect(() => {
     // console.log("jalan use effect============");
     fetchCuisines()
